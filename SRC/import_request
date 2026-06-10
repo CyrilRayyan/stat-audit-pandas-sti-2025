@@ -1,0 +1,28 @@
+import requests
+import json
+
+def fetch_github_data(repo, token):
+    headers = {"Authorization": f"token {token}"}
+    all_data = []
+    page = 1
+    while True:
+        url = f"https://api.github.com/repos/{repo}/issues?state=all&per_page=100&page={page}"
+        response = requests.get(url, headers=headers)
+        # Jika gagal atau data kosong, berhenti
+        if response.status_code != 200 or not response.json():
+            break
+        all_data.extend(response.json())
+        print(f"Fetched page {page}")
+        page += 1
+    return all_data 
+
+
+repo_target = "pandas-dev/pandas" 
+token_saya = "ghp_KQZ13XqvE5odaGJ40m5MF6dbCpDfjv3c4b" 
+
+hasil_data = fetch_github_data(repo_target, token_saya)
+
+print(f"Berhasil mengambil {len(hasil_data)} item.")
+with open("data_raw.json", "w") as f:
+    json.dump(hasil_data, f)
+print("Data telah disimpan ke file data_raw.json")
