@@ -1,4 +1,4 @@
-# Statistical Audit of [Nama Proyek GitHub]
+# Statistical Audit of Pandas
 
 **Proyek Audit Statistik STI 2025 - Kelompok 14**
 
