@@ -15,10 +15,10 @@
 > | Nama | Peran | Tanggung Jawab |
 > | --- | --- | --- |
 > | Cyril Alif Ar Rayyan | Data Engineer | EDA, Data Collection |
-> | [Nama] | Estimation Analyst | MLE, Beta Posterior |
-> | [Nama] | Inference Analyst | Confidence Intervals |
-> | [Nama] | Hypothesis Analyst | Hypothesis Testing |
-> | [Nama] | Computation Analyst | Simulation, MCMC, Bloom Filter |
+> | Cyril Alif Ar Rayyan | Estimation Analyst | MLE, Beta Posterior |
+> | Cyril Alif Ar Rayyan | Inference Analyst | Confidence Intervals |
+> | Cyril Alif Ar Rayyan | Hypothesis Analyst | Hypothesis Testing |
+> | Cyril Alif Ar Rayyan | Computation Analyst | Simulation, MCMC, Bloom Filter |
 > 
 > 
 
