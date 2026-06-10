@@ -49,6 +49,8 @@ Penelitian ini bertujuan untuk:
 
 ### Pertanyaan Penelitian
 
+Bagaimana Kualitas data mentah dan proses pembersihannya
+
 #### A. Estimasi
 Berapa laju penyelesaian issue ($\lambda$) yang merepresentasikan produktivitas repositori?
 
