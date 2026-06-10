@@ -152,7 +152,7 @@ python analysis_E.py
 
 Hasil estimasi menunjukkan bahwa laju penyelesaian issue repositori adalah:
 
-**λ = [isi nilai lambda] issue per hari**
+**λ = [Estimasi Laju Penyelesaian (Lambda/MLE): 0.0301 issue per hari] **
 
 Interpretasi:
 
@@ -181,7 +181,9 @@ Hal ini menunjukkan bahwa terdapat variasi perilaku penyelesaian issue yang tida
 
 Hasil simulasi menunjukkan bahwa terdapat:
 
-**[isi jumlah] issue**
+**Total issue: 9900
+Jumlah issue yang tergolong bottleneck (outlier): 1373
+Batas durasi normal: 36.58 hari**
 
 yang tergolong sebagai bottleneck atau outlier berdasarkan durasi penyelesaiannya.
 
@@ -197,7 +199,8 @@ Karakteristik bottleneck:
 
 ### Produktivitas Repositori
 
-- Laju penyelesaian issue sebesar **[isi nilai lambda] issue/hari**.
+- Laju penyelesaian issue sebesar **[Estimasi Laju Penyelesaian (Lambda/MLE): 0.0301 issue **.
+- Confidence Interval 95% untuk rata-rata durasi: 30.8876 hingga 35.1814 hari
 
 ### Validitas Model
 
@@ -206,7 +209,9 @@ Karakteristik bottleneck:
 
 ### Bottleneck
 
-- Ditemukan **[isi jumlah] issue** yang berpotensi menjadi hambatan utama dalam workflow pengembangan.
+- Ditemukan **Total issue: 9900
+Jumlah issue yang tergolong bottleneck (outlier): 1373
+Batas durasi normal: 36.58 hari** yang berpotensi menjadi hambatan utama dalam workflow pengembangan.
 
 ---
 
@@ -220,12 +225,6 @@ Selain itu, simulasi probabilistik berhasil mengidentifikasi sejumlah bottleneck
 
 ## 10. Langkah Selanjutnya
 
-Sebelum melakukan commit dan push ke GitHub:
-
-- Ganti **[Nama Proyek GitHub]** dengan nama repositori yang dianalisis.
-- Ganti **[Link ke GitHub Proyek]** dengan URL repositori.
-- Isi **[isi nilai lambda]** menggunakan hasil dari `estimation.py`.
-- Isi **[isi jumlah]** menggunakan hasil dari `analysis_E.py`.
 
 Kemudian jalankan:
 
