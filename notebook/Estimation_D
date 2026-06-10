@@ -1,0 +1,40 @@
+import pandas as pd
+import numpy as np
+import scipy.stats as stats
+import os
+
+# 1. Load data
+script_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(script_dir, 'dataset.csv')
+df = pd.read_csv(file_path)
+durations = df['duration_days'].dropna()
+
+# 2. Estimasi parameter (lambda) yang sudah kita dapatkan sebelumnya
+lambda_mle = 1 / np.mean(durations)
+
+# 3. Uji Kolmogorov-Smirnov (KS Test)
+# H0: Data mengikuti distribusi eksponensial
+# H1: Data tidak mengikuti distribusi eksponensial
+ks_stat, p_value = stats.kstest(durations, 'expon', args=(0, 1/lambda_mle))
+
+print("--- Hasil Analisis Uji Hipotesis (Anggota D) ---")
+print(f"Statistik KS: {ks_stat:.4f}")
+print(f"P-Value: {p_value:.4f}")
+
+# 4. Interpretasi
+alpha = 0.05
+print(f"\nSignifikansi level (alpha): {alpha}")
+if p_value > alpha:
+    print("Kesimpulan: Gagal menolak H0.")
+    print("Data secara statistik dianggap mengikuti distribusi eksponensial.")
+else:
+    print("Kesimpulan: Menolak H0.")
+    print("Data tidak mengikuti distribusi eksponensial (perlu alternatif distribusi).")
+
+# 5. Export hasil untuk laporan
+result_df = pd.DataFrame({
+    'Metric': ['KS_Statistic', 'P_Value', 'Accepted_H0'],
+    'Value': [ks_stat, p_value, p_value > alpha]
+})
+result_df.to_csv(os.path.join(script_dir, 'hypothesis_test_result.csv'), index=False)
+print("\nHasil uji disimpan dalam 'hypothesis_test_result.csv'")
